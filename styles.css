@@ -84,3 +84,33 @@ ul{
 .navbar a:hover{
     background-color: rgba(255,255,255,0.2);
 }
+hero p{
+    color: white;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.hero a{
+    display: inline-block;
+
+    padding: 12px 25px;
+    margin-right: 10px;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+}
+
+.hero a:first-child{
+    background-color: #4caf7a;
+    color: white;
+}
+
+.hero a:last-child{
+    border: 2px solid white;
+    color: white;
+}
+
+.hero img{
+    border-radius: 15px;
+}
