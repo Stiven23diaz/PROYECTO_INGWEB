@@ -50,4 +50,27 @@ document.addEventListener("DOMContentLoaded", () => {
     mensaje.addEventListener("input", function () {
         this.setCustomValidity("");
     });
+    
+     window.addEventListener("scroll", function () {
+
+        if (window.scrollY > 700) {
+            btnArriba.style.opacity = "1";
+            btnArriba.style.pointerEvents = "auto";
+        } else {
+            btnArriba.style.opacity = "0";
+            btnArriba.style.pointerEvents = "none";
+        }
+
+    });
+
+    // Subir al inicio
+    btnArriba.addEventListener("click", function () {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+
 });
