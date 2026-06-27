@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const nombre = document.getElementById("nombre");
     const correo = document.getElementById("correo");
     const mensaje = document.getElementById("mensaje");
+    const enviar = document.getElementById("enviar");
 
     // Nombre
     nombre.addEventListener("invalid", function () {
@@ -50,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
     mensaje.addEventListener("input", function () {
         this.setCustomValidity("");
     });
-    
      window.addEventListener("scroll", function () {
 
         if (window.scrollY > 700) {
@@ -73,4 +73,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-});
+    enviar.addEventListener("click", function (event) {
+        if (nombre.checkValidity() && correo.checkValidity() && mensaje.checkValidity()) {
+            alert("MENSAJE ENVIADO");
+        } else {
+            alert("COMPLETAR TODOS LOS CAMPOS CORRECTAMENTE");
+        }})
+    });
