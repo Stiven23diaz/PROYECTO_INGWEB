@@ -79,4 +79,27 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             alert("COMPLETAR TODOS LOS CAMPOS CORRECTAMENTE");
         }})
+
+        // la seccion del api del clima no tocaaar
+
+        const btnClima = document.getElementById("btnClima");
+        btnClima.addEventListener("click", obtenerClima);
+
+        function obtenerClima() {
+
+            fetch("https://api.open-meteo.com/v1/forecast?latitude=4.6097&longitude=-74.0817&current=temperature_2m,wind_speed_10m")
+
+        .then(respuesta => respuesta.json())
+        .then(datos => {
+            document.getElementById("temperatura").textContent =
+                "Temperatura: " + datos.current.temperature_2m + " °C";
+            document.getElementById("viento").textContent =
+                "Velocidad promerdio del viento " + datos.current.wind_speed_10m + " km/h";
+        })
+        .catch(error => {
+            console.log(error);
+            alert("No fue posible obtener los datos del clima.");
+
+        });
+}
     });
